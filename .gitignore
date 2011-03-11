@@ -1,0 +1,4 @@
+*.pyc
+/*.coffee
+/extra_tests
+/js2coffee-tests
