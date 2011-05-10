@@ -462,7 +462,7 @@ class Builder:
 
     sub = Code()
     sub += self.build(item.body)
-    sub += "break if %s" % self.build(item.condition)
+    sub += "break unless %s" % self.build(item.condition)
 
     re *= sub
     return re
