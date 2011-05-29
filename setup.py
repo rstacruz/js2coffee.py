@@ -1,14 +1,12 @@
 #! /usr/bin/env python
-from setuptools import setup, find_packages
+from setuptools import setup
 import sys, os
-
-version = '0.1'
 
 setup(
   name                 = 'js2coffee',
-  version              = version,
+  version              = '0.1',
   description          = "JavaScript to CoffeeScript compiler",
-  packages             = find_packages(exclude = ['test']),
+  packages             = ['js2coffee'],
   include_package_data = True,
   zip_safe             = False,
   test_suite           = 'test',

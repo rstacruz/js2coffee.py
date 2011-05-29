@@ -4,3 +4,4 @@
 /js2coffee-tests
 /*.egg-info
 /build
+/dist
