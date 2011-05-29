@@ -417,8 +417,10 @@ class Builder:
     return "\n".join([self.build(i) for i in item])
 
   def _regexp(self, item):
-    # Workaround for "/ /g" not being parseable.
-    if item.value['regexp'][0] == ' ':
+    begins_with = item.value['regexp'][0]
+
+    # Workaround for "/ /g" and "/=/" not being parseable.
+    if begins_with in [' ', '=']:
       return "RegExp(%s, %s)" % (repr(item.value['regexp']), repr(item.value['modifiers']))
 
     else:

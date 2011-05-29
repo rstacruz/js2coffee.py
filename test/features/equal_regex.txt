@@ -1,0 +1,1 @@
+[ '=', index: 2, input: 'a = b' ]
