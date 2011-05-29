@@ -1,4 +1,4 @@
 .PHONY: test
 
 test:
-	cd test && python .
+	python test

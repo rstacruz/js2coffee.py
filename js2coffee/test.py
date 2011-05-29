@@ -26,13 +26,17 @@ class CoffeeTestCase(unittest.TestCase):
       self.assertTrue(False)
 
   def compare_file(self, name):
-    js = file("%s.js" % name).read()
-    cs = file("%s.coffee" % name).read()
+    path = "test/features/%s" % name
 
-    # Inspect the output
-    out = "fixtures/%s.txt" % name
+    js  = file("%s.js" % path).read()
+    cs  = file("%s.coffee" % path).read()
+    out = "%s.txt" % path
+
     if os.path.exists(out):
-      p = sub.Popen(['coffee', "fixtures/%s.coffee"%name], stdout=sub.PIPE, stderr=sub.PIPE)
+      p = sub.Popen(
+          ['coffee', "%s.coffee" % path],
+          stdout=sub.PIPE, stderr=sub.PIPE)
+
       output, errors = p.communicate()
       self.assertEqual(output, file(out).read())
 

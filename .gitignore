@@ -2,3 +2,5 @@
 /*.coffee
 /extra_tests
 /js2coffee-tests
+/*.egg-info
+/build

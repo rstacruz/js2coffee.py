@@ -96,7 +96,8 @@ class Builder:
       re += "%s = " % self._id(item.name)
 
     if item.params:
-      re += "(%s) -> " % ', '.join([ self._id(str) for str in item.params ])
+      re += "(%s) -> " % ', '.join([ self._param_id(str) for str in item.params 
+        ])
     else:
       re += "->"
 
@@ -269,6 +270,14 @@ class Builder:
       return "%s_" % str
     else:
       return str
+
+  # A parameter in a function.
+  def _param_id(self, str):
+    # Sidestep the usual jQuery thing of doing function($, undefined)
+    if str in ['undefined']:
+      return "undefined_"
+    else:
+      return self._id(str)
 
   def _identifier(self, item):
     return self._id(item.value)
