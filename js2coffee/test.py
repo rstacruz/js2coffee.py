@@ -26,7 +26,7 @@ class CoffeeTestCase(unittest.TestCase):
       self.assertTrue(False)
 
   def compare_file(self, name):
-    path = "test/features/%s" % name
+    path = os.path.join(os.path.dirname(__file__), "../test/features/%s" % name)
 
     js  = file("%s.js" % path).read()
     cs  = file("%s.coffee" % path).read()

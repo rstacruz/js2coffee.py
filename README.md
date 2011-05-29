@@ -6,7 +6,7 @@
 
 ### Testing
 
- * Use `make test`
+ * Use `make test` or `./setup.py test`
  * Check the [js2coffee-tests](http://github.com/rstacruz/js2coffee-tests) 
  repo for even more tests
 
