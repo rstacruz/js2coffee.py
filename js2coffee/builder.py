@@ -135,6 +135,9 @@ class Builder:
   def _binary_operator(self, item, operation):
     return ''.join([self.build(item[0]), operation, self.build(item[1])])
 
+  def _unary_operator(self, item, operation):
+    return ''.join([operation, self.build(item[0])])
+
   def _this(self, item):
     return 'this'
 
@@ -199,7 +202,7 @@ class Builder:
     return self._binary_operator(item, " ^ ")
 
   def _bitwise_not(self, item):
-    raise Unsupported("Bitwise not isn't supported by CoffeeScript")
+    return self._unary_operator(item, "~")
 
   def _and(self, item):
     return self._binary_operator(item, " and ")
