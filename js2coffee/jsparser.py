@@ -974,7 +974,7 @@ def Expression(t, x, stop=None):
             elif tt == LEFT_BRACKET:
                 if t.scanOperand:
                     # Array initializer. Parse using recursive descent, as the
-                    # sub-grammer here is not an operator grammar.
+                    # sub-grammar here is not an operator grammar.
                     n = Node(t, ARRAY_INIT)
                     while True:
                         tt = t.peek()
